@@ -2,10 +2,9 @@
 
 import { AnimatePresence, motion } from "framer-motion";
 import { usePathname } from "next/navigation";
-import { exit } from "process";
 
-const pageTransitionVariants = {
-  hidden: {
+const pageTransitionAnimation = {
+  animate: {
     opacity: 0,
     transition: {
       delay: 1,
@@ -13,7 +12,7 @@ const pageTransitionVariants = {
       ease: "easeInOut",
     },
   },
-  visible: {
+  initial: {
     opacity: 1,
   },
 };
@@ -27,13 +26,16 @@ const PageTransition = ({
 
   return (
     <AnimatePresence>
-      <motion.div
-        key={pathname}
-        variants={pageTransitionVariants}
-        exit="hidden"
-      >
-        {children}
-      </motion.div>
+      <div key={pathname}>
+        <motion.div
+          key={pathname}
+          variants={pageTransitionAnimation}
+          initial="initial"
+          animate="animate"
+          className="h-screen w-screen fixed top:0 pointer-events-none"
+        />
+      </div>
+      {children}
     </AnimatePresence>
   );
 };
