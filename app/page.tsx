@@ -1,5 +1,9 @@
-import Image from "next/image";
+const Home = () => {
+  return (
+    <section className="h-full">
+      <div className="container mx-auto h-full">homepage</div>
+    </section>
+  );
+};
 
-export default function Home() {
-  return <main>homepage</main>;
-}
+export default Home;
