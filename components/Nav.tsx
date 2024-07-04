@@ -10,7 +10,7 @@ import clsx from "clsx";
 
 const links = [
   {
-    name: "Home",
+    name: "About",
     path: "/",
   },
   {
@@ -47,7 +47,7 @@ const NavMenu = ({
                 "capitalize hover:text-accent"
               )}
             >
-              {name}
+              0{index + 1}. {name}
             </Button>
           </Link>
         );

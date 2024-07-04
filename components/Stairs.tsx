@@ -33,7 +33,7 @@ const Stairs = () => {
               ease: "easeInOut",
               delay: (numberOfSteps - (index + 1)) * 0.1,
             }}
-            className="h-full w-full bg-black relative"
+            className="h-full w-full bg-white relative"
           ></motion.div>
         );
       })}

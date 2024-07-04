@@ -1,12 +1,11 @@
 import type { Metadata } from "next";
-import { Coda } from "next/font/google";
+import { JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
-import PageTransition from "@/components/PageTransition";
-import StairTransition from "@/components/StairTransition";
+import clsx from "clsx";
 
-const inter = Coda({
-  weight: ["400", "800"],
+const inter = JetBrains_Mono({
+  weight: ["500"],
   subsets: ["latin"],
   variable: "--font-inter",
 });
@@ -23,10 +22,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.variable}>
+      <body className={clsx(inter.variable, "h-screen")}>
         <Header></Header>
-        <StairTransition></StairTransition>
-        <PageTransition>{children}</PageTransition>
+        {/* <StairTransition></StairTransition> */}
+        {/* <PageTransition> */}
+        <section className="container mx-auto h-full mt-10">{children}</section>
+        {/* </PageTransition> */}
       </body>
     </html>
   );

@@ -1,7 +1,11 @@
+import About from "@/components/About";
+import Experience from "@/components/Experience";
+
 const Home = () => {
   return (
     <section className="h-full">
-      <div className="container mx-auto h-full">homepage</div>
+      <About />
+      <Experience />
     </section>
   );
 };
