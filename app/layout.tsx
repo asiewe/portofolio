@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { JetBrains_Mono } from "next/font/google";
+import { Hubballi } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import clsx from "clsx";
 
-const inter = JetBrains_Mono({
-  weight: ["500"],
+const inter = Hubballi({
+  weight: ["400"],
   subsets: ["latin"],
   variable: "--font-inter",
 });

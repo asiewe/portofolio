@@ -68,10 +68,10 @@ const experiences = [
 ];
 const Experience = () => {
   return (
-    <section className="h-full">
-      <div className="container mx-auto h-full">
-        <h1 className="text-4xl">
-          <span className="text-accent">02.</span> Where I've worked
+    <section>
+      <div className="container mx-auto">
+        <h1 className="text-3xl text-destructive-foreground font-bold mb-8">
+          <span className="text-accent">03.</span> My Career Path
         </h1>
         <Tabs defaultValue={experiences[0].company} className="flex">
           <TabsList className="flex flex-col h-full">
@@ -116,14 +116,15 @@ const Experience = () => {
                       );
                     })}
                   </ul>
-
-                  {stack.map((item, key) => {
-                    return (
-                      <Badge key={key} className="mr-3 bg-accent">
-                        {item}
-                      </Badge>
-                    );
-                  })}
+                  <div className="flex gap-3">
+                    {stack.map((item, key) => {
+                      return (
+                        <Badge key={key} className=" bg-accent">
+                          {item}
+                        </Badge>
+                      );
+                    })}
+                  </div>
                 </TabsContent>
               );
             }

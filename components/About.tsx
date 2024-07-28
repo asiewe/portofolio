@@ -9,7 +9,7 @@ const About = () => {
       {/* text */}
       <div className="text-center xl:text-left order-2 xl:order-none">
         <div className="mb-6">
-          <h1 className="text-4xl">Hi I' m</h1>
+          <h1 className="text-4xl text-destructive-foreground">Hi I&apos; m</h1>
           <h1 className="text-accent text-4xl">Armel Siewe</h1>
         </div>
         <p className="max-w-[500px] mb-9 text-center xl:text-left">
