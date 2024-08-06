@@ -2,6 +2,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Link from "next/link";
 import { FaCaretRight } from "react-icons/fa";
 import { Badge } from "@/components/ui/badge";
+import { clsx } from "clsx";
 
 const experiences = [
   {
@@ -66,10 +67,10 @@ const experiences = [
     stack: ["React", "Redux", "HTML", "CSS", "NodeJS", "ExpressJS", "SQL"],
   },
 ];
-const Experience = () => {
+const Experience = (className: Readonly<{ className?: string }>) => {
   return (
     <section>
-      <div className="container mx-auto">
+      <div className={clsx(className)}>
         <h1 className="text-3xl text-destructive-foreground font-bold mb-8">
           <span className="text-accent">03.</span> My Career Path
         </h1>

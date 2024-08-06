@@ -26,7 +26,7 @@ export default function RootLayout({
         <Header></Header>
         {/* <StairTransition></StairTransition> */}
         {/* <PageTransition> */}
-        <section className="container mx-auto h-full mt-10">{children}</section>
+        <section className="container mx-auto">{children}</section>
         {/* </PageTransition> */}
       </body>
     </html>

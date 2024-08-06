@@ -8,10 +8,10 @@ const Home = () => {
   return (
     <section className="h-full">
       <About />
-      <Expertise/>
+      <Expertise className="min-h-[100vh]" />
       <Experience />
-      <Work/>
-      <Contact/>
+      <Work />
+      <Contact />
     </section>
   );
 };

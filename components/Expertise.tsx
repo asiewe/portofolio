@@ -1,8 +1,9 @@
+import clsx from "clsx";
 import { Card, CardHeader, CardTitle, CardContent } from "./ui/card";
 
-function Expertise() {
+function Expertise({ className }: Readonly<{ className?: string }>) {
   return (
-    <div className="container mx-auto">
+    <div className={clsx(className)}>
       <h1 className="text-3xl text-destructive-foreground font-bold mb-8">
         <span className="text-accent">02.</span> My Expertise
       </h1>
