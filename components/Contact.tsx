@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 
 function Contact() {
   return (
-    <div className="container mx-auto">
+    <div className="container mx-auto" id="contact">
       <h1 className="text-3xl text-destructive-foreground font-bold mb-8">
         <span className="text-accent">05.</span> Get In Touch
       </h1>

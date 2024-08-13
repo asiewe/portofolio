@@ -15,18 +15,18 @@ const links = [
   },
   {
     name: "Expertise",
-    path: "/expertise",
+    path: "#expertise",
   },
   {
     name: "Work",
-    path: "/work",
+    path: "#work",
   },
 
   {
     name: "Experience",
-    path: "/experience",
+    path: "#experience",
   },
-  { name: "Contact", path: "/contact" },
+  { name: "Contact", path: "#contact" },
 ];
 
 const NavMenu = ({

@@ -7,8 +7,11 @@ interface SocialProps {
 }
 
 const socials = [
-  { icon: <FaGithub />, path: "" },
-  { icon: <FaLinkedinIn />, path: "" },
+  { icon: <FaGithub />, path: "https://github.com/asiewe" },
+  {
+    icon: <FaLinkedinIn />,
+    path: "https://www.linkedin.com/in/armel-siewe-8770631a1/",
+  },
 ];
 
 const Social = ({
@@ -19,7 +22,7 @@ const Social = ({
     <div className={containerClassNames}>
       {socials.map(({ icon, path }, index) => {
         return (
-          <Link key={index} href={path} className={iconClassNames}>
+          <Link key={index} href={path} target="_blank" className={iconClassNames}>
             {icon}
           </Link>
         );

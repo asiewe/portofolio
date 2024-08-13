@@ -1,10 +1,3 @@
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardTitle,
-} from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import Image from "next/image";
 
@@ -29,7 +22,7 @@ const projects: Project[] = [
 
 const Works = () => {
   return (
-    <div className="container mx-auto">
+    <div id="work" className="container mx-auto">
       <h1 className="text-3xl text-destructive-foreground font-bold mb-8">
         <span className="text-accent">03.</span> My Work
       </h1>

@@ -2,10 +2,14 @@ import { FiDownload } from "react-icons/fi";
 import Photo from "@/components/Photo";
 import Social from "@/components/Social";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 const About = () => {
   return (
-    <div className="flex flex-col xl:flex-row items-center justify-between  min-h-[95vh]">
+    <div
+      id="about"
+      className="flex flex-col xl:flex-row items-center justify-between  min-h-[95vh]"
+    >
       {/* text */}
       <div className="text-center xl:text-left order-2 xl:order-none">
         <div className="mb-6">
@@ -21,10 +25,13 @@ const About = () => {
         </p>
         {/* btn and socials */}
         <div className="flex flex-col items-center gap-y-4">
-          <Button variant="outline" className="border-accent text-accent">
-            <span>Download CV </span>
-            <FiDownload />
-          </Button>
+          <a href="/cv.pdf" download>
+            <Button variant="outline">
+              <span>Download CV </span>
+              <FiDownload />
+            </Button>
+          </a>
+
           <div className="mb-8 xl:mb-0">
             <Social
               containerClassNames="flex gap-6"

@@ -69,7 +69,7 @@ const experiences = [
 ];
 const Experience = (className: Readonly<{ className?: string }>) => {
   return (
-    <section>
+    <section id="experience">
       <div className={clsx(className)}>
         <h1 className="text-3xl text-destructive-foreground font-bold mb-8">
           <span className="text-accent">03.</span> My Career Path

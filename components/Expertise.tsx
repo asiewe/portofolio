@@ -3,7 +3,7 @@ import { Card, CardHeader, CardTitle, CardContent } from "./ui/card";
 
 function Expertise({ className }: Readonly<{ className?: string }>) {
   return (
-    <div className={clsx(className)}>
+    <div id="expertise" className={clsx(className)}>
       <h1 className="text-3xl text-destructive-foreground font-bold mb-8">
         <span className="text-accent">02.</span> My Expertise
       </h1>
