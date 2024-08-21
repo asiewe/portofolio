@@ -6,9 +6,9 @@ import Work from "@/components/Work";
 
 const Home = () => {
   return (
-    <section className="h-full">
+    <section className="h-full flex flex-col gap-16">
       <About />
-      <Expertise className="min-h-[100vh]" />
+      <Expertise />
       <Experience />
       <Work />
       <Contact />

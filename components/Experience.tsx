@@ -67,70 +67,131 @@ const experiences = [
     stack: ["React", "Redux", "HTML", "CSS", "NodeJS", "ExpressJS", "SQL"],
   },
 ];
-const Experience = (className: Readonly<{ className?: string }>) => {
+
+const ExperienceMobile = (className: Readonly<{ className?: string }>) => {
+  return (
+    <div className={clsx(className, "flex flex-col gap-10")}>
+      {experiences.map(
+        ({ description, role, companySiteUrl, company, period, stack }) => {
+          return (
+            <div key={company}>
+              <div className="">
+                <h2 className="text-xl">
+                  <span className="text-destructive-foreground ">{role}</span>
+                  <Link
+                    target="_blank"
+                    className="text-accent"
+                    href={companySiteUrl}
+                  >
+                    {""} @ {company}
+                  </Link>
+                </h2>
+                <h3 className="text-lg">{period}</h3>
+              </div>
+
+              <ul className="flex flex-col gap-2">
+                {description.map((item, company) => {
+                  return (
+                    <li key={company}>
+                      <FaCaretRight className="inline text-accent mr-3" />
+                      <span>{item}</span>
+                    </li>
+                  );
+                })}
+              </ul>
+
+              <div className="flex gap-3 mt-2 flex-wrap">
+                {stack.map((item, key) => {
+                  return (
+                    <Badge key={key} className=" bg-accent">
+                      {item}
+                    </Badge>
+                  );
+                })}
+              </div>
+            </div>
+          );
+        }
+      )}
+    </div>
+  );
+};
+
+const ExperienceDesktop = (className: Readonly<{ className?: string }>) => {
+  return (
+    <div className={clsx(className)}>
+      <Tabs defaultValue={experiences[0].company}>
+        <TabsList className="flex flex-col">
+          {experiences.map(({ company }) => {
+            return (
+              <TabsTrigger value={company} key={company}>
+                {company}
+              </TabsTrigger>
+            );
+          })}
+        </TabsList>
+
+        {experiences.map(
+          ({ description, role, companySiteUrl, company, period, stack }) => {
+            return (
+              <TabsContent
+                value={company}
+                key={company}
+                className="text-primary"
+              >
+                <div className="mb-5">
+                  <h2 className="text-2xl">
+                    {role}
+                    <Link
+                      target="_blank"
+                      className="text-accent"
+                      href={companySiteUrl}
+                    >
+                      {""} @ {company}
+                    </Link>
+                  </h2>
+                  <h3 className="text-lg">{period}</h3>
+                </div>
+
+                <ul className="mb-5">
+                  {description.map((item, company) => {
+                    return (
+                      <li key={company} className="pb-5">
+                        <FaCaretRight className="inline text-accent mr-3" />
+                        <span>{item}</span>
+                      </li>
+                    );
+                  })}
+                </ul>
+                <div className="flex gap-3">
+                  {stack.map((item, key) => {
+                    return (
+                      <Badge key={key} className=" bg-accent">
+                        {item}
+                      </Badge>
+                    );
+                  })}
+                </div>
+              </TabsContent>
+            );
+          }
+        )}
+      </Tabs>
+    </div>
+  );
+};
+
+export const Experience = (className: Readonly<{ className?: string }>) => {
   return (
     <section id="experience">
-      <div className={clsx(className)}>
-        <h1 className="text-3xl text-destructive-foreground font-bold mb-8">
-          <span className="text-accent">03.</span> My Career Path
-        </h1>
-        <Tabs defaultValue={experiences[0].company} className="flex">
-          <TabsList className="flex flex-col h-full">
-            {experiences.map(({ company }) => {
-              return (
-                <TabsTrigger value={company} key={company}>
-                  {company}
-                </TabsTrigger>
-              );
-            })}
-          </TabsList>
-
-          {experiences.map(
-            ({ description, role, companySiteUrl, company, period, stack }) => {
-              return (
-                <TabsContent
-                  value={company}
-                  key={company}
-                  className="text-primary"
-                >
-                  <div className="mb-5">
-                    <h2 className="text-2xl">
-                      {role}
-                      <Link
-                        target="_blank"
-                        className="text-accent"
-                        href={companySiteUrl}
-                      >
-                        {""} @ {company}
-                      </Link>
-                    </h2>
-                    <h3 className="text-lg">{period}</h3>
-                  </div>
-
-                  <ul className="mb-5">
-                    {description.map((item, company) => {
-                      return (
-                        <li key={company} className="pb-5">
-                          <FaCaretRight className="inline text-accent mr-3" />
-                          <span>{item}</span>
-                        </li>
-                      );
-                    })}
-                  </ul>
-                  <div className="flex gap-3">
-                    {stack.map((item, key) => {
-                      return (
-                        <Badge key={key} className=" bg-accent">
-                          {item}
-                        </Badge>
-                      );
-                    })}
-                  </div>
-                </TabsContent>
-              );
-            }
-          )}
-        </Tabs>
+      <h1 className="text-3xl text-destructive-foreground font-bold mb-8">
+        <span className="text-accent">03.</span> My Career Path
+      </h1>
+      <div className="md:hidden">
+        <ExperienceMobile />
+      </div>
+      <div className="hidden md:block">
+        <ExperienceDesktop />
       </div>
     </section>
   );
