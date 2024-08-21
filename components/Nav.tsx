@@ -63,7 +63,7 @@ const MobileNav = () => {
         <CiMenuFries className="text-[32px] cursor-pointer text-primary" />
       </SheetTrigger>
       <SheetContent className="bg-primary text-secondary">
-        <div className="mt-32 mb-40 text-center">
+        <div className="mt-20 mb-10 text-center">
           <Logo />
         </div>
         <NavMenu

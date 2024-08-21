@@ -8,7 +8,7 @@ const About = () => {
   return (
     <div
       id="about"
-      className="flex flex-col xl:flex-row items-center justify-between  min-h-[95vh]"
+      className="flex flex-col xl:flex-row items-center justify-between  md:min-h-[95vh]"
     >
       {/* text */}
       <div className="text-center xl:text-left order-2 xl:order-none">
