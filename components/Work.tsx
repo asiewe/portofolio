@@ -15,8 +15,15 @@ const projects: Project[] = [
     description:
       "A wedding website featuring a countdown timer and background music, created in my spare time as a gift for close friends.",
     stack: ["Gatsby", "React"],
-    picture: "wedding-ss.png",
+    picture: "/imgs/wedding-ss.png",
     repo: "https://github.com/asiewe/wedding",
+  },
+  {
+    title: "Upcoming: VSCode extension",
+    description:
+      "As a daily user of VSCode, I found myself needing better IntelliSense support for a specific library I rely on. To improve my development experience and productivity, I decided to create and integrate this feature into VSCode.",
+    picture: "/imgs/vscode.png",
+    stack: ["Typescript", "LSP"],
   },
 ];
 
@@ -27,34 +34,36 @@ const Works = () => {
         <span className="text-accent">04.</span> My Work
       </h1>
 
-      {projects.map((project, index) => {
-        return (
-          <div key={index} className="md:flex flex-col gap-8">
-            <Image
-              src="/imgs/wedding-ss.png"
-              alt={project.title}
-              quality={100}
-              width={300}
-              height={200}
-              className="object-contain relative"
-            />
-            {/*  Description */}
-            <div className="flex flex-col gap-5">
-              <div className="text-xl">{project.title}</div>
-              <div className="mb-2">{project.description}</div>
-              <div className="flex gap-2">
-                {project.stack.map((item, key) => {
-                  return (
-                    <Badge key={key} className="bg-accent">
-                      {item}
-                    </Badge>
-                  );
-                })}
+      <div className="flex flex-col gap-10">
+        {projects.map((project, index) => {
+          return (
+            <div key={index} className="">
+              <Image
+                src={project.picture || ""}
+                alt={project.title}
+                quality={100}
+                width={300}
+                height={200}
+                className="object-contain relative"
+              />
+              {/*  Description */}
+              <div className="flex flex-col">
+                <div className="text-xl">{project.title}</div>
+                <div>{project.description}</div>
+                <div className="flex mt-2 gap-2">
+                  {project.stack.map((item, key) => {
+                    return (
+                      <Badge key={key} className="bg-accent">
+                        {item}
+                      </Badge>
+                    );
+                  })}
+                </div>
               </div>
             </div>
-          </div>
-        );
-      })}
+          );
+        })}
+      </div>
     </div>
   );
 };
