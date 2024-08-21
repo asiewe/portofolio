@@ -22,14 +22,14 @@ const projects: Project[] = [
 
 const Works = () => {
   return (
-    <div id="work" className="container mx-auto">
+    <div id="work">
       <h1 className="text-3xl text-destructive-foreground font-bold mb-8">
-        <span className="text-accent">03.</span> My Work
+        <span className="text-accent">04.</span> My Work
       </h1>
 
       {projects.map((project, index) => {
         return (
-          <div key={index} className="w-[700px] flex gap-8">
+          <div key={index} className="md:flex flex-col gap-8">
             <Image
               src="/imgs/wedding-ss.png"
               alt={project.title}
@@ -41,8 +41,8 @@ const Works = () => {
             {/*  Description */}
             <div className="flex flex-col gap-5">
               <div className="text-xl">{project.title}</div>
-              <div className="mb-3">{project.description}</div>
-              <div className="flex gap-3">
+              <div className="mb-2">{project.description}</div>
+              <div className="flex gap-2">
                 {project.stack.map((item, key) => {
                   return (
                     <Badge key={key} className="bg-accent">
