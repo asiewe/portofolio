@@ -1,5 +1,7 @@
 import { Badge } from "@/components/ui/badge";
 import Image from "next/image";
+import { FaExternalLinkAlt } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
 
 interface Project {
   title: string;
@@ -7,6 +9,7 @@ interface Project {
   stack: string[];
   picture?: string;
   repo?: string;
+  link?: string;
 }
 
 const projects: Project[] = [
@@ -17,6 +20,7 @@ const projects: Project[] = [
     stack: ["Gatsby", "React"],
     picture: "/imgs/wedding-ss.png",
     repo: "https://github.com/asiewe/wedding",
+    link: "https://stephanie-simplice.com",
   },
   {
     title: "Upcoming: VSCode extension",
@@ -47,13 +51,30 @@ const Works = () => {
                 className="object-contain relative"
               />
               {/*  Description */}
-              <div className="flex flex-col">
-                <div className="text-xl">{project.title}</div>
+              <div className="flex flex-col gap-5">
+                <div className="flex justify-between items-center">
+                  <div className="text-xl">{project.title}</div>
+                  <div className="flex gap-2">
+                    {project.link && (
+                      <a href={project.link} target="blank">
+                        <FaExternalLinkAlt />
+                      </a>
+                    )}
+                    {project.repo && (
+                      <a href={project.repo} target="blank">
+                        <FaGithub />
+                      </a>
+                    )}
+                  </div>
+                </div>
                 <div>{project.description}</div>
                 <div className="flex mt-2 gap-2">
                   {project.stack.map((item, key) => {
                     return (
-                      <Badge key={key} className="bg-accent">
+                      <Badge
+                        key={key}
+                        className="bg-accent-foreground text-accent"
+                      >
                         {item}
                       </Badge>
                     );

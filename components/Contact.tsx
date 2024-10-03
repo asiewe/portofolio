@@ -13,7 +13,9 @@ function Contact() {
         get back to you!
       </div>
       <div className="mt-10 flex align-middle justify-center">
-        <Button>Let&apos;s Connect</Button>
+        <a href="mailto:armel22siewe@gmail.com">
+          <Button>Let&apos;s Connect</Button>
+        </a>
       </div>
     </div>
   );

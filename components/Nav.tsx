@@ -2,11 +2,12 @@
 
 import Link from "next/link";
 import { Button } from "./ui/button";
-import { usePathname } from "next/navigation";
 import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
 import { CiMenuFries } from "react-icons/ci";
 import Logo from "./Logo";
 import clsx from "clsx";
+import useHash from "@/lib/useHash";
+import { useState } from "react";
 
 const links = [
   {
@@ -18,13 +19,12 @@ const links = [
     path: "#expertise",
   },
   {
-    name: "Work",
-    path: "#work",
-  },
-
-  {
     name: "Experience",
     path: "#experience",
+  },
+  {
+    name: "Work",
+    path: "#work",
   },
   { name: "Contact", path: "#contact" },
 ];
@@ -32,8 +32,13 @@ const links = [
 const NavMenu = ({
   className,
   menuItemClassName,
-}: Readonly<{ className?: string; menuItemClassName?: string }>) => {
-  const pathname = usePathname();
+  onClickMenuItem,
+}: Readonly<{
+  className?: string;
+  menuItemClassName?: string;
+  onClickMenuItem?: () => void;
+}>) => {
+  const hash = useHash();
   return (
     <nav className={className}>
       {links.map(({ name, path }, index) => {
@@ -42,12 +47,13 @@ const NavMenu = ({
             <Button
               variant="link"
               className={clsx(
-                { "!text-accent": path === pathname },
+                { "!text-accent": path === hash },
                 menuItemClassName,
                 "capitalize hover:text-accent"
               )}
+              onClick={onClickMenuItem}
             >
-              0{index + 1}. {name}
+              {index + 1}. {name}
             </Button>
           </Link>
         );
@@ -57,8 +63,13 @@ const NavMenu = ({
 };
 
 const MobileNav = () => {
+  const [open, setOpen] = useState(false);
+
+  const onClickMenuItem = () => {
+    setOpen(false);
+  };
   return (
-    <Sheet>
+    <Sheet open={open} onOpenChange={setOpen}>
       <SheetTrigger asChild>
         <CiMenuFries className="text-[32px] cursor-pointer text-primary" />
       </SheetTrigger>
@@ -69,6 +80,7 @@ const MobileNav = () => {
         <NavMenu
           className="flex flex-col justify-center items-center gap-8"
           menuItemClassName="text-secondary"
+          onClickMenuItem={onClickMenuItem}
         />
       </SheetContent>
     </Sheet>

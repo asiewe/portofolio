@@ -45,7 +45,7 @@ const config = {
         },
         accent: {
           DEFAULT: "var(--green)",
-          foreground: "var(--green)",
+          foreground: "var(--green-tint)",
         },
         popover: {
           DEFAULT: "hsl(var(--popover))",
