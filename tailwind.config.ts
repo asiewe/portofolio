@@ -13,7 +13,7 @@ const config = {
     container: {
       center: true,
       padding: {
-        DEFAULT: "4rem",
+        DEFAULT: "1rem",
         lg: "8rem",
       },
     },
