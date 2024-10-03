@@ -120,7 +120,7 @@ const ExperienceMobile = (className: Readonly<{ className?: string }>) => {
 const ExperienceDesktop = (className: Readonly<{ className?: string }>) => {
   return (
     <div className={clsx(className)}>
-      <Tabs defaultValue={experiences[0].company}>
+      <Tabs defaultValue={experiences[0].company} className="flex">
         <TabsList className="flex flex-col">
           {experiences.map(({ company }) => {
             return (
@@ -187,10 +187,10 @@ export const Experience = (className: Readonly<{ className?: string }>) => {
       <h1 className="text-3xl text-destructive-foreground font-bold mb-8">
         <span className="text-accent">03.</span> My Career Path
       </h1>
-      <div className="md:hidden">
+      <div className="xl:hidden">
         <ExperienceMobile />
       </div>
-      <div className="hidden md:block">
+      <div className="hidden xl:block">
         <ExperienceDesktop />
       </div>
     </section>

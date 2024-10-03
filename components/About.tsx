@@ -2,7 +2,6 @@ import { FiDownload } from "react-icons/fi";
 import Photo from "@/components/Photo";
 import Social from "@/components/Social";
 import { Button } from "@/components/ui/button";
-import Link from "next/link";
 
 const About = () => {
   return (

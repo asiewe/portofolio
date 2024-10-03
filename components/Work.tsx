@@ -37,7 +37,7 @@ const Works = () => {
       <div className="flex flex-col gap-10">
         {projects.map((project, index) => {
           return (
-            <div key={index} className="">
+            <div key={index} className="lg:flex lg:gap-5">
               <Image
                 src={project.picture || ""}
                 alt={project.title}

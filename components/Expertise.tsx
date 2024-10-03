@@ -7,8 +7,8 @@ function Expertise({ className }: Readonly<{ className?: string }>) {
       <h1 className="text-3xl text-destructive-foreground font-bold mb-8">
         <span className="text-accent">02.</span> My Expertise
       </h1>
-      <div className="flex gap-5 items-stretch">
-        <Card className="flex-1">
+      <div className="grid grid-cols-1 gap-5 xl:grid-cols-2">
+        <Card>
           <CardHeader>
             <CardTitle className="text-secondary-foreground">
               Frontend Development
@@ -49,7 +49,7 @@ function Expertise({ className }: Readonly<{ className?: string }>) {
             </ul>
           </CardContent>
         </Card>
-        <Card className="flex-1">
+        <Card>
           <CardHeader>
             <CardTitle className="text-secondary-foreground">
               Backend Development

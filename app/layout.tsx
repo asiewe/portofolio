@@ -4,15 +4,16 @@ import "./globals.css";
 import Header from "@/components/Header";
 import clsx from "clsx";
 
-const inter = Hubballi({
+const huballi = Hubballi({
   weight: ["400"],
   subsets: ["latin"],
-  variable: "--font-inter",
+  variable: "--font-huballi",
 });
 
 export const metadata: Metadata = {
   title: "asiewe",
   description: "Armel Siewe Portofolio website",
+  viewport: { width: "device-width", initialScale: 1 },
 };
 
 export default function RootLayout({
@@ -22,12 +23,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={clsx(inter.variable, "h-screen")}>
-        <Header></Header>
-        {/* <StairTransition></StairTransition> */}
-        {/* <PageTransition> */}
+      <body className={clsx(huballi.variable, "h-screen")}>
+        <Header />
         <section className="container mx-auto py-8 md:py-0">{children}</section>
-        {/* </PageTransition> */}
       </body>
     </html>
   );
